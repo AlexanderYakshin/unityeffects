@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60557d57c42bd846b1b50a55cd8fd1f, type: 3}
+  m_Name: SimpleVisual
+  m_EditorClassIdentifier: 
+  Effect: {fileID: 1451199967761946, guid: e5c2f34b3f54938449ff9c8cb45c1288, type: 2}
+  RotationRandomness: 0
+  TryToFindInstantiatePoint: 0
+  InstantiatePointObjectName: 

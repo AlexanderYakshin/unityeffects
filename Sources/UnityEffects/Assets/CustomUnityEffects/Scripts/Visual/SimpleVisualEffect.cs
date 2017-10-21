@@ -10,6 +10,7 @@ namespace CustomUnityEffects
 
 		public bool TryToFindInstantiatePoint;
 		public string InstantiatePointObjectName;
+		public bool InheritRotation;
 
 		public override GameObject Play(Vector3 position, Transform owner, Transform parent = null)
 		{
@@ -36,17 +37,23 @@ namespace CustomUnityEffects
 			var effectGameObject = GameObject.Instantiate(Effect, instantiatePointPosition, Quaternion.identity);
 			effectGameObject.transform.SetParent(parent);
 
-			var initialAngle = Vector2.SignedAngle(Vector2.right, direction);
-
-			if (RotationRandomness > 0.001f)
+			if (InheritRotation && owner != null)
 			{
-				var halfAngle = RotationRandomness/2f;
-				var angle = Random.Range(-halfAngle, halfAngle);
-
-				initialAngle += angle;
+				effectGameObject.transform.rotation = owner.rotation;
 			}
+			else
+			{
+				var initialAngle = Vector2.SignedAngle(Vector2.right, direction);
+				if (RotationRandomness > 0.001f)
+				{
+					var halfAngle = RotationRandomness / 2f;
+					var angle = Random.Range(-halfAngle, halfAngle);
 
-			effectGameObject.transform.rotation = Quaternion.Euler(0f, 0f, initialAngle);
+					initialAngle += angle;
+				}
+
+				effectGameObject.transform.rotation = Quaternion.Euler(0f, 0f, initialAngle);
+			}
 
 			return effectGameObject;
 		}

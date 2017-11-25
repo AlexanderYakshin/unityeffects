@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ff77c994457ad47bcb4d5660017a02, type: 3}
+  m_Name: Particle Visual Effect
+  m_EditorClassIdentifier: 
+  _particles:
+  - Prefab: {fileID: 114741686167847330, guid: 2c5881bc3aa460347af294519297923b, type: 2}
+    Direction: {x: -1, y: 0}
+    _randomDirection: 1
+    DependOnOwnersDirection: 1
+    MaxSpeed: 7
+    SpeedCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1.0015259
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.32374775
+        value: 0.33298492
+        inSlope: -0.17285347
+        outSlope: -0.17285347
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6698973
+        value: 0.98165894
+        inSlope: -1.1128187
+        outSlope: -1.1128187
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0.0015258789
+        inSlope: -4.2853227
+        outSlope: -4.2853227
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    LifeTime: 1
+    RandomDelay: 1
+    DelayValue:
+      MinValue: 0
+      MaxValue: 0.13010418
+  - Prefab: {fileID: 114741686167847330, guid: 2c5881bc3aa460347af294519297923b, type: 2}
+    Direction: {x: 1, y: 0}
+    _randomDirection: 1
+    DependOnOwnersDirection: 1
+    MaxSpeed: 7
+    SpeedCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1.0015259
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.32374775
+        value: 0.33298492
+        inSlope: -0.17285347
+        outSlope: -0.17285347
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6698973
+        value: 0.98165894
+        inSlope: -1.1128187
+        outSlope: -1.1128187
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0.0015258789
+        inSlope: -4.2853227
+        outSlope: -4.2853227
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    LifeTime: 1
+    RandomDelay: 1
+    DelayValue:
+      MinValue: 0
+      MaxValue: 0.17516199
+  _randomParticle: 0
+  _particlesCount: 20

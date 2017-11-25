@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace CustomUnityEffects.Editor
 {
-	[CustomEditor(typeof(VisualEffectBase), true)]
-	public class SimpleVisualEffectEditor : UnityEditor.Editor
+	[CustomEditor(typeof(CompositeVisualEffect), true)]
+	public class CompositeVisualEffect : UnityEditor.Editor
 	{
 		private Transform _previewPoint;
 		private Vector3 _previewPosition;
 		private Vector3 _previewDirection;
 
-		private readonly string[] _popupStrings = {"Preview By Point", "Preview By Position"};
+		private readonly string[] _popupStrings = { "Preview By Point", "Preview By Position" };
 		private int _selectedPopupIndex;
 
 		public override void OnInspectorGUI()
@@ -25,7 +25,7 @@ namespace CustomUnityEffects.Editor
 			var direction = Vector3.right;
 			if (_selectedPopupIndex == 0)
 			{
-				_previewPoint = (Transform)EditorGUILayout.ObjectField("Preview position", _previewPoint, typeof (Transform), true);
+				_previewPoint = (Transform)EditorGUILayout.ObjectField("Preview position", _previewPoint, typeof(Transform), true);
 				position = _previewPoint == null ? Vector3.zero : _previewPoint.position;
 			}
 			else
@@ -34,8 +34,8 @@ namespace CustomUnityEffects.Editor
 				position = _previewPosition;
 			}
 
-			_previewDirection = EditorGUILayout.Vector3Field("Preview direction", _previewDirection);
-			direction = _previewDirection;
+			_previewDirection = EditorGUILayout.Vector3Field("Preview direction", _previewPosition);
+			direction = _previewPosition;
 
 			EditorGUI.BeginDisabledGroup(serializedObject.isEditingMultipleObjects);
 			if (GUILayout.Button("Preview"))
@@ -46,3 +46,4 @@ namespace CustomUnityEffects.Editor
 		}
 	}
 }
+

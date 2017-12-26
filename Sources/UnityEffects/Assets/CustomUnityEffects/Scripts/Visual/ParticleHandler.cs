@@ -9,16 +9,29 @@ namespace CustomUnityEffects
 		public float MaxSpeed;
 		public AnimationCurve SpeedCurve;
 		public float LifeTime;
+		public float SpeedTime;
+		public bool RotateWhileFly;
 
 		private float _timer = 0f;
-		private bool _started;
 
-		public void SetParametersAndStart(Vector2 direction, float maxSpeed, AnimationCurve speedCurve, float lifeTime, float delay)
+		private bool _started;
+		private int _rotationSign;
+		private float _rotationSpeed;
+		private float _currentAngle;
+
+		public void SetParametersAndStart(Vector2 direction, float maxSpeed, AnimationCurve speedCurve, float speedTime, float lifeTime, float delay, bool rotateWhileFly)
 		{
 			Direction = direction.normalized;
 			MaxSpeed = maxSpeed;
 			SpeedCurve = speedCurve;
+			SpeedTime = speedTime;
 			LifeTime = lifeTime;
+			RotateWhileFly = rotateWhileFly;
+			if (RotateWhileFly)
+				_rotationSign = Random.Range(0, 2) == 0 ? -1 : 1;
+
+			_rotationSpeed = Random.Range(360f, 720f);
+			_currentAngle = transform.rotation.eulerAngles.z;
 			StartCoroutine(StartParticle(delay));
 		}
 
@@ -33,13 +46,14 @@ namespace CustomUnityEffects
 			if (_started)
 			{
 				_timer += Time.deltaTime;
-				var currentSpeed = MaxSpeed;
-				if (LifeTime > 0f)
+				if (LifeTime > 0f && _timer < SpeedTime)
 				{
-					currentSpeed = MaxSpeed * SpeedCurve.Evaluate(Mathf.Clamp01(_timer / LifeTime));
+					var currentSpeed = MaxSpeed;
+					currentSpeed = MaxSpeed * SpeedCurve.Evaluate(Mathf.Clamp01(_timer / SpeedTime));
+					transform.position = transform.position + Direction * currentSpeed * Time.deltaTime;
+					_currentAngle = _currentAngle + _rotationSpeed * _rotationSign * Time.deltaTime;
+					transform.rotation = Quaternion.Euler(0f, 0f, _currentAngle);
 				}
-
-				transform.position = transform.position + Direction * currentSpeed * Time.deltaTime;
 
 				if (_timer >= LifeTime)
 				{

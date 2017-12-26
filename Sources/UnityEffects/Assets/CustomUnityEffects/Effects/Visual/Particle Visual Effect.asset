@@ -22,75 +22,47 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1.0015259
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
       - serializedVersion: 2
-        time: 0.32374775
-        value: 0.33298492
-        inSlope: -0.17285347
-        outSlope: -0.17285347
-        tangentMode: 0
+        time: 0.2
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
       - serializedVersion: 2
-        time: 0.6698973
-        value: 0.98165894
-        inSlope: -1.1128187
-        outSlope: -1.1128187
-        tangentMode: 0
+        time: 0.4
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 0.8
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
       - serializedVersion: 2
         time: 1
-        value: 0.0015258789
-        inSlope: -4.2853227
-        outSlope: -4.2853227
-        tangentMode: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    LifeTime: 1
+    LifeTime: 10
     RandomDelay: 1
     DelayValue:
       MinValue: 0
-      MaxValue: 0.13010418
-  - Prefab: {fileID: 114741686167847330, guid: 2c5881bc3aa460347af294519297923b, type: 2}
-    Direction: {x: 1, y: 0}
-    _randomDirection: 1
-    DependOnOwnersDirection: 1
-    MaxSpeed: 7
-    SpeedCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1.0015259
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 0.32374775
-        value: 0.33298492
-        inSlope: -0.17285347
-        outSlope: -0.17285347
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 0.6698973
-        value: 0.98165894
-        inSlope: -1.1128187
-        outSlope: -1.1128187
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 0.0015258789
-        inSlope: -4.2853227
-        outSlope: -4.2853227
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    LifeTime: 1
-    RandomDelay: 1
-    DelayValue:
-      MinValue: 0
-      MaxValue: 0.17516199
+      MaxValue: 0.29021096
   _randomParticle: 0
-  _particlesCount: 20
+  _particlesCount: 100
